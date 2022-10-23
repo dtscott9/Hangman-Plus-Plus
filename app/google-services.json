@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691296555046",
+    "project_id": "sprint-3-5c8f0",
+    "storage_bucket": "sprint-3-5c8f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691296555046:android:4cacb02a6769706db096e7",
+        "android_client_info": {
+          "package_name": "com.example.hangman_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691296555046-d167t6td95g0e3dbq3obpn3qj17o205q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1PNRXRSiBsjbzwbahBqJyMbts5EDiEBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691296555046-d167t6td95g0e3dbq3obpn3qj17o205q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
