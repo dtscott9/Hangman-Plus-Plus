@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:691296555046:android:4cacb02a6769706db096e7",
+        "mobilesdk_app_id": "1:691296555046:android:5edd5713ba7b4b34b096e7",
         "android_client_info": {
           "package_name": "com.example.hangman_app"
         }
