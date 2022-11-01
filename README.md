@@ -1,10 +1,10 @@
 # Overview
 This is a continuation of my Kotlin hangman project that I'm trying to make more exciting
-and action based. The main improvement is that I've added two competitive modes, "Endless"
+and action based. The main improvement is that I've added is two competitive modes, "Endless"
 mode and "Time Attack" mode. In endless mode, the player must guess as many words as they
 can without getting one wrong. In time attack, the player is given 60 seconds to guess as
 many words as they can. For each word they get right they get 100 points (however in time
-attack mode for they lose 100 points for each word they get wrong). I connected the program
+attack mode they lose 100 points for each word they get wrong). I connected the program to
 a Firestore database to keep track of the player scores, and the program actually pulls from 
 the database to display the scores for each player. You can also update and delete the scores
 in game. 
