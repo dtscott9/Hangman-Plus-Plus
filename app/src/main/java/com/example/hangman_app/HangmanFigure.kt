@@ -1,30 +1,34 @@
 package com.example.hangman_app
 
+import android.graphics.drawable.AnimationDrawable
 import android.widget.ImageView
+import android.widget.TextView
 
 class HangmanFigure {
 
 
-    fun checkPlayerLives(playerLives:Int, hangMan:ImageView)
+
+    fun checkPlayerLives(playerLives:Int, hangMan:ImageView, animation:AnimationDrawable, health:TextView)
     {
         when (playerLives) {
             6 -> {
-                hangMan.setImageResource(R.drawable.hangman1)
+                hangMan.setBackgroundResource(R.drawable.hero_animation_idle)
+
             }
             5 -> {
-                hangMan.setImageResource(R.drawable.hangman2)
+                health.text = "${playerLives}/6"
             }
             4 -> {
-                hangMan.setImageResource(R.drawable.hangman3)
+                health.text = "${playerLives}/6"
             }
             3 -> {
-                hangMan.setImageResource(R.drawable.hangman4)
+                health.text = "${playerLives}/6"
             }
             2 -> {
-                hangMan.setImageResource(R.drawable.hangman5)
+                health.text = "${playerLives}/6"
             }
             1 -> {
-                hangMan.setImageResource(R.drawable.hangman6)
+                health.text = "${playerLives}/6"
             }
         }
 
