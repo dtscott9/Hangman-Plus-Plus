@@ -1,13 +1,15 @@
 # Overview
-This is a continuation of the hangman game that I made in Kotlin. 
-That version just used the console and user inputs for the game to run,
-but this is a version made in Android Studio with a new ui. The game works
-the same as it did in the other version, however in this Android Studio version
-the player is given 26 different buttons on the screen that represent the alphabet.
-Once the player clicks any one of the buttons, that button disappears and the letter
-that the button represents is used as the player guess. 
+This is a continuation of my Kotlin hangman project that I'm trying to make more exciting
+and action based. The main improvement is that I've added two competitive modes, "Endless"
+mode and "Time Attack" mode. In endless mode, the player must guess as many words as they
+can without getting one wrong. In time attack, the player is given 60 seconds to guess as
+many words as they can. For each word they get right they get 100 points (however in time
+attack mode for they lose 100 points for each word they get wrong). I connected the program
+a Firestore database to keep track of the player scores, and the program actually pulls from 
+the database to display the scores for each player. You can also update and delete the scores
+in game. 
 
-Demonstration Video: https://www.youtube.com/watch?v=XQrwomgglGk
+Demonstration Video: https://www.youtube.com/watch?v=mbkhECtOf48
 
 # Development Environment
 I used Android Studio to develop this program because of it's integrated use of
@@ -16,22 +18,21 @@ me with a template that had everything I needed to start writing code. This prog
 also uses the Kotlin standard library. 
 
 # Useful Links
-As far as the tutorials found in these links go, I should clarify that I did not
-follow them step by step, but instead only integrated certain elements that I liked
-from them. For example, from the video of the last link, I really liked the idea of 
-making the letters their own constraint layout, so I modeled my own letter choosing
-system after that. However, I did not follow the rest of that video and made everything
-else my own to the best of my ability. 
+
 [Kotlin Programming Language](https://kotlinlang.org/)
 
 [Stack Overflow](https://stackoverflow.com/)
 
-[Android App Development Tutorial for Beginners - Your First App](https://www.youtube.com/watch?v=FjrKMcnKahY&t=1981s)
+[Swiping to Delete](https://www.youtube.com/watch?v=xE8z8wiXz18)
 
-[Android - How to make a Hangman Game in Kotlin](https://www.youtube.com/watch?v=kGGpH7ypxAU&t=1003s)
+[Creating the Recyclerview for the Data](https://www.youtube.com/watch?v=Ly0xwWlUpVM&t=393s)
+
+[How to Create Drawable Animations](https://www.youtube.com/watch?v=scZYIAZrMWk)
+
+
 
 
 # Future Work
 1. Add sound effects and background music.
-2. Figure out how to integrate multiple screens.
-3. Create more space between the underscores so player so better tell which letters are separate.
+2. Add character animations for when a letter is guessed wrong or right.
+3. Allow the score to only be updated for the same player if their new score is higher than their previous.
