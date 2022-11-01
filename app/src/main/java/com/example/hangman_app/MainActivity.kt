@@ -41,6 +41,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var trollDeathAnimation: AnimationDrawable
     private lateinit var heroAttackAnimation: AnimationDrawable
     private lateinit var heroAttackImage: ImageView
+    private lateinit var trollAttackAnimation: AnimationDrawable
+    private lateinit var trollAttackImage: ImageView
+    private lateinit var hangmanAttImage: ImageView
+    private lateinit var hangmanAttack: AnimationDrawable
 
     // View Variables
 
@@ -64,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         var dbPath2:String = "Endless"
 
         //Animations
+        //Hero
         hangmanImage = findViewById(R.id.hangmanFigure)
         hangmanImage.setBackgroundResource(R.drawable.hero_animation_idle)
         idleAnimation = hangmanImage.background as AnimationDrawable
@@ -71,6 +76,17 @@ class MainActivity : AppCompatActivity() {
         dyingImage.setBackgroundResource(R.drawable.dying_animation)
         dyingAnimation = dyingImage.background as AnimationDrawable
         dyingImage.visibility = View.GONE
+        heroAttackImage = findViewById(R.id.heroWin)
+        heroAttackImage.setBackgroundResource(R.drawable.hero_animation_attacking)
+        heroAttackAnimation = heroAttackImage.background as AnimationDrawable
+        heroAttackImage.visibility = View.GONE
+        hangmanAttImage = findViewById(R.id.heroAttack)
+        hangmanAttImage.setBackgroundResource(R.drawable.hero_animation_attacking)
+        hangmanAttack = hangmanAttImage.background as AnimationDrawable
+        hangmanAttImage.visibility = View.GONE
+
+
+        //Troll
         trollImage = findViewById(R.id.trollImage)
         trollImage.setBackgroundResource(R.drawable.troll_idle)
         trollIdleAnimation = trollImage.background as AnimationDrawable
@@ -78,10 +94,13 @@ class MainActivity : AppCompatActivity() {
         trollDeathImage.setBackgroundResource(R.drawable.troll_die)
         trollDeathAnimation = trollDeathImage.background as AnimationDrawable
         trollDeathImage.visibility = View.GONE
-        heroAttackImage = findViewById(R.id.heroWin)
-        heroAttackImage.setBackgroundResource(R.drawable.hero_animation_attacking)
-        heroAttackAnimation = heroAttackImage.background as AnimationDrawable
-        heroAttackImage.visibility = View.GONE
+        trollAttackImage = findViewById(R.id.trollWin)
+        trollAttackImage.setBackgroundResource(R.drawable.troll_attack_animation)
+        trollAttackAnimation = trollAttackImage.background as AnimationDrawable
+        trollAttackImage.visibility = View.GONE
+
+
+
 
 
         // View Variables linked to Kotlin
@@ -234,6 +253,7 @@ class MainActivity : AppCompatActivity() {
                         dyingImage.visibility = View.GONE
                         trollDeathImage.visibility = View.GONE
                         heroAttackImage.visibility = View.GONE
+                        trollAttackImage.visibility = View.GONE
                         trollImage.visibility = View.VISIBLE
 //                        hangmanImage.setImageResource(R.drawable.hangman1)
 
@@ -261,6 +281,8 @@ class MainActivity : AppCompatActivity() {
               healthBox.text = "0/6"
               hangmanImage.visibility = View.GONE
               trollImage.visibility = View.GONE
+              trollAttackImage.visibility = View.VISIBLE
+              trollAttackAnimation.start()
               dyingImage.visibility = View.VISIBLE
               dyingAnimation.start()
               guessWord.text = "You Lose\nThe word was:\n${wordToGuess}"
@@ -317,9 +339,11 @@ class MainActivity : AppCompatActivity() {
                     letter.setOnClickListener {
                         terminal.playerGuess = letter.text[0]
                         terminal.checkUserGuess(guessWord, wordToGuess)
-                        if (!terminal.status)
+                        if (!terminal.status) {
                             if (playerLives >= 1)
                                 playerLives -= 1
+                        }
+
                         hangman.checkPlayerLives(playerLives, hangmanImage, idleAnimation, healthBox)
                         guessWord.text = terminal.dashedWord.concatToString()
                         letter.visibility = View.GONE
@@ -341,5 +365,7 @@ class MainActivity : AppCompatActivity() {
         trollIdleAnimation.start()
         trollDeathAnimation.stop()
         heroAttackAnimation.stop()
+        trollAttackAnimation.stop()
+        hangmanAttack.stop()
     }
 }
